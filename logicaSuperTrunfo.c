@@ -134,7 +134,8 @@ int main() {
         } else {
             printf("A cidade vencedora é: %s\n", nome2);
         }
-    }
+    return 0;
+}
 
     // Exibição dos Resultados:
     // Após realizar as comparações, exiba os resultados para o usuário.
@@ -143,5 +144,4 @@ int main() {
     // Exemplo:
     // printf("A cidade vencedora é: %s\n", cidadeVencedora);
 
-    return 0;
-}
+   
