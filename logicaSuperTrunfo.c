@@ -6,21 +6,6 @@
 // Siga os comentários para implementar cada parte do desafio.
 
 int main() {
-    // Definição das variáveis para armazenar as propriedades das cidades
-    // Você pode utilizar o código do primeiro desafio
-
-    
-    // Cadastro das Cartas:
-    // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
-    // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
-
-    // Exemplo:
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)
-
     // Declaração das variáveis para as duas cidades de maneira independente
     int codigo_da_cidade1 = 1;
     char nome1[60];
@@ -89,59 +74,52 @@ int main() {
     printf("PIB: %.2f bilhões de reais\n", pib2);
     printf("Número de Pontos Turísticos: %d\n", numero_de_pontos_turisticos2);
 
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
-
+    // Comparação de Cartas utilizando switch
     int cat = 0;
-    printf("Insira qual categoria será objeto de comparação: 1 para população; 2 para área; 3 para PIB e 4 para numero de ponto turisticos: ");
+    printf("Insira qual categoria será objeto de comparação: 1 para população; 2 para área; 3 para PIB e 4 para numero de pontos turísticos: ");
     scanf("%d", &cat);
 
-    if (cat == 1) {
-        printf("\nA categoria escolhida foi população\n");
-        if (populacao1 >= populacao2) {
-            printf("A cidade vencedora é: %s\n", nome1);
-        } else {
-            printf("A cidade vencedora é: %s\n", nome2);
-        }
+    switch (cat) {
+        case 1:
+            printf("\nA categoria escolhida foi população\n");
+            if (populacao1 >= populacao2) {
+                printf("A cidade vencedora é: %s\n", nome1);
+            } else {
+                printf("A cidade vencedora é: %s\n", nome2);
+            }
+            break;
+        
+        case 2:
+            printf("\nA categoria escolhida foi área\n");
+            if (area1 >= area2) {
+                printf("A cidade vencedora é: %s\n", nome1);
+            } else {
+                printf("A cidade vencedora é: %s\n", nome2);
+            }
+            break;
+
+        case 3:
+            printf("\nA categoria escolhida foi PIB\n");
+            if (pib1 >= pib2) {
+                printf("A cidade vencedora é: %s\n", nome1);
+            } else {
+                printf("A cidade vencedora é: %s\n", nome2);
+            }
+            break;
+
+        case 4:
+            printf("\nA categoria escolhida foi Número de Pontos Turísticos\n");
+            if (numero_de_pontos_turisticos1 >= numero_de_pontos_turisticos2) {
+                printf("A cidade vencedora é: %s\n", nome1);
+            } else {
+                printf("A cidade vencedora é: %s\n", nome2);
+            }
+            break;
+
+        default:
+            printf("Opção inválida. Por favor, insira um número entre 1 e 4.\n");
+            break;
     }
-    else if (cat == 2) {
-        printf("\nA categoria escolhida foi área\n");
-        if (area1 >= area2) {
-            printf("A cidade vencedora é: %s\n", nome1);
-        } else {
-            printf("A cidade vencedora é: %s\n", nome2);
-        }
-    }
-    else if (cat == 3) {
-        printf("\nA categoria escolhida foi PIB\n");
-        if (pib1 >= pib2) {
-            printf("A cidade vencedora é: %s\n", nome1);
-        } else {
-            printf("A cidade vencedora é: %s\n", nome2);
-        }
-    }
-    else if (cat == 4) 
-        printf("\nA categoria escolhida foi Número de Pontos Turísticos\n");
-        if (numero_de_pontos_turisticos1 >= numero_de_pontos_turisticos2) {
-            printf("A cidade vencedora é: %s\n", nome1);
-        } else {
-            printf("A cidade vencedora é: %s\n", nome2);
-        }
+
     return 0;
 }
-
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
-
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
-
-   
